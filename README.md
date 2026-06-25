@@ -1,4 +1,4 @@
-# TechTrack Mobile App
+# Kairo Mobile App
 
 A specialized mobile application designed for developers and tech professionals to organize, monitor, and optimize their job search journey.
 
