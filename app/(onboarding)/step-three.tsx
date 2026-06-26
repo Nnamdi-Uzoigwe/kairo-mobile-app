@@ -10,12 +10,12 @@ export default function StepThree() {
         <SafeAreaView className="flex-1 items-center justify-between bg-[#ede9fe]">
             {/* heading */}
             <Heading />
-            <View className="flex px-4 items-center">
+            <View className="flex px-4 gap-2 items-center">
                 <Image 
                     source={require("@/assets/images/step-three.png")}
                     className="px-4"
                     />
-                <AppText weight="bold" size={21} className="text-center">Never miss a follow-up</AppText>
+                <AppText weight="bold" size={26} className="text-center">Never miss a follow-up</AppText>
                 <AppText>Set reminders and get notified before it's too late.</AppText>
             </View>
 

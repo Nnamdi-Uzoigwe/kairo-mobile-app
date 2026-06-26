@@ -11,12 +11,12 @@ export default function StepTwo() {
         <SafeAreaView className="flex-1 items-center justify-between bg-[#ede9fe]">
             {/* heading */}
             <Heading />
-            <View className="flex px-4 items-center">
+            <View className="flex px-4 items-center gap-2">
                 <Image 
                     source={require("@/assets/images/step-two.png")}
                     className="px-4"
                     />
-                <AppText weight="bold" size={21} className="text-center">Track every stage</AppText>
+                <AppText weight="bold" size={26} className="text-center">Track every stage</AppText>
                 <AppText>From applied to offer - know exactly where you stand.</AppText>
             </View>
 

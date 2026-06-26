@@ -14,12 +14,17 @@ import Feather from "@expo/vector-icons/Feather";
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { router } from "expo-router";
 import { useState } from "react";
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 export default function Login() {
     const [isOpen, setIsOpen] = useState(false);
-
+    const [loading, setLoading] = useState(false);
     function handleLogin() {
-        console.log("login success!")
+        // setTimeout(() => {
+        //   setLoading(true);
+        // }, 3000)
+        // console.log("login success!");
+        // setLoading(false);
     }
   return (
     <SafeAreaView className="flex-1 bg-[#ede9fe]">
@@ -89,7 +94,13 @@ export default function Login() {
               </View>
             </View>
 
-            <Button label="Log in" icon={<Feather name="arrow-right" size={20} color="white" />} onPress={handleLogin} iconPosition="right"/>
+            <View className="my-3">
+              <TouchableOpacity onPress={() => router.replace("/(auth)/forgot-password")}>
+              <AppText weight="semibold" className="text-right" color="#630ED4" size={16}>Forgot Password?</AppText>
+              </TouchableOpacity>
+            </View>
+
+            <Button label="Log in" icon={<Feather name="arrow-right" size={20} color="white" />} onPress={() => router.replace("/(tabs)/home")} iconPosition="right"/>
           </View>
 
           <View className="flex-row gap-2 items-center">

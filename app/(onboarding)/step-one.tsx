@@ -12,12 +12,12 @@ export default function StepOne() {
         <SafeAreaView className="flex-1 items-center justify-between bg-[#ede9fe]">
             {/* heading */}
             <Heading />
-            <View className="flex px-3 items-center">
+            <View className="flex px-3 items-center gap-2">
                 <Image 
                     source={require("@/assets/images/step-one.png")}
                     className="px-4"
                     />
-                <AppText weight="bold" size={21} className="text-center">Stay on top of every application</AppText>
+                <AppText weight="bold" size={26} className="text-center">Stay on top of every application</AppText>
                 <AppText>Log jobs you've applied to and never lose track again.</AppText>
             </View>
 
