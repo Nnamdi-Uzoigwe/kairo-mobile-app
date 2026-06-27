@@ -31,6 +31,13 @@ const recentApplicationsData = [
         dateApplied: "June 3, 2026",
         applicationStage: "Offer"
     },
+    {
+        id: "5",
+        role: "IT Consultant",
+        company: "ERM Corporation",
+        dateApplied: "May 23, 2026",
+        applicationStage: "Rejected"
+    },
 ]
 export default function RecentApplications() {
     return (
@@ -42,19 +49,19 @@ export default function RecentApplications() {
                 </TouchableOpacity>
             </View>
 
-            <FlatList 
-                data={recentApplicationsData}
-                showsVerticalScrollIndicator={false}
-                keyExtractor={(item) => item.id}
-                renderItem={({ item }) => (
+            <View className="mt-3 gap-4">
+                {recentApplicationsData.map((item) => (
                     <ApplicationCard 
-                        role={item.role}
-                        date={item.dateApplied}
-                        stage={item.applicationStage}
-                        company={item.company}
+                    key={item.id}
+                    role={item.role}
+                    date={item.dateApplied}
+                    stage={item.applicationStage}
+                    company={item.company}
                     />
-                )}
-            />
+                ))}
+            </View>
+              
+            
         </View>
     )
 }

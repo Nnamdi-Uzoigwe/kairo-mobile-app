@@ -1,27 +1,12 @@
-// import AppText from "@/components/ui/AppText";
-// import { Tabs } from "expo-router";
-// import { View } from "react-native";
-
-// export default function TabsLayout() {
-//     return (
-//         <Tabs screenOptions={{
-//             headerShown: false,
-//         }}>
-//             <Tabs.Screen name="home" />
-//             <Tabs.Screen name="jobs" />
-//             <Tabs.Screen name="stats" />
-//             <Tabs.Screen name="settings" />
-    
-//         </Tabs>
-//     )
-// }
-
-
 import AppText from "@/components/ui/AppText";
-import { Tabs, useSegments } from "expo-router";
+import { router, Tabs, useSegments } from "expo-router";
 import { TouchableOpacity, View } from "react-native";
 import Foundation from '@expo/vector-icons/Foundation';
 import AntDesign from '@expo/vector-icons/AntDesign';
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import Octicons from '@expo/vector-icons/Octicons';
+
 export default function TabsLayout() {
     const segments = useSegments();
     const currentTab = segments[segments.length - 1];
@@ -30,20 +15,46 @@ export default function TabsLayout() {
 
     return (
         <View style={{ flex: 1 }}>
-            <Tabs screenOptions={{ headerShown: false }}>
+            <Tabs screenOptions={{ 
+                headerShown: false,
+                tabBarActiveTintColor: "#630ED4"
+                }}>
                 <Tabs.Screen name="home" options={{
                     tabBarIcon: ({color, size}) => (
-                        <Foundation name="home" size={24} color="black" />
+                        <Foundation name="home" size={size} color={color} />
                     )
                 }} />
-                <Tabs.Screen name="jobs" />
-                <Tabs.Screen name="stats" />
-                <Tabs.Screen name="settings" />
+                <Tabs.Screen 
+                    name="jobs" 
+                    options={{
+                        tabBarIcon: ({ color, size}) => (
+                            <MaterialCommunityIcons name="briefcase" size={size} color={color} />
+                        )
+                    }}
+
+                />
+                <Tabs.Screen 
+                    name="stats"
+                    options={{
+                        tabBarIcon: ({color, size}) => (
+                            <MaterialIcons name="insert-chart-outlined" size={size} color={color} />
+                        )
+                    }} 
+
+                />
+                <Tabs.Screen 
+                    name="settings"
+                    options={{
+                         tabBarIcon: ({color, size}) => (
+                            <Octicons name="gear" size={size} color={color} />
+                        )
+                    }}    
+                />
             </Tabs>
 
             {showFAB && (
                 <TouchableOpacity
-                    onPress={() => {/* navigate to add application */}}
+                    onPress={() => router.push("/applications/add")}
                     style={{
                         position: "absolute",
                         bottom: 100,

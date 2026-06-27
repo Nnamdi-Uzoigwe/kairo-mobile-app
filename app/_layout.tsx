@@ -26,6 +26,14 @@ export default function RootLayout() {
   if (!loaded) return null;
 
 
-  return <Stack screenOptions={{ headerShown: false }} />;
+  return (
+  <Stack screenOptions={{ headerShown: false }}>
+    <Stack.Screen name='(tabs)' />
+    <Stack.Screen name='notifications' />
+    <Stack.Screen name='notifications/preferences' />
+    <Stack.Screen name='applications/add' />
+    <Stack.Screen name='applications/[id]' />
+  </Stack>
+  )
 }
 

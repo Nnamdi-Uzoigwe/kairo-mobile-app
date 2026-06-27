@@ -28,6 +28,11 @@ const appOverviewData = [
 export default function ApplicationOverview() {
     return (
         <View>
+            {/* Greeting */}
+                            <View className="flex-row items-center gap-1">
+                                <AppText size={16} weight="semibold">Good Morning,</AppText>
+                                <AppText weight="semibold" color="#630ED4" size={18}>Nnamdi👋</AppText>
+                            </View>
             <AppText size={16}>Here's your job hunt overview</AppText>
 
             <View className="mt-3 flex-row w-full gap-3">
